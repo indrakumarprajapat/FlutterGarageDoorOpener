@@ -43,7 +43,7 @@ abstract class GeofenceTrigger {
     print('Starting location updates');
     await GeofencingManager.promoteToForeground();
     _locationUpdates =
-        (await Geolocator().getPositionStream()).listen(_handleLocationUpdate);
+        (await Geolocator.getPositionStream()).listen(_handleLocationUpdate);
   }
 
   static Future<void> _stopUpdates() async {
@@ -54,7 +54,7 @@ abstract class GeofenceTrigger {
 
   static Future<void> _handleLocationUpdate(Position p) async {
     final home = homeRegion.location;
-    final distance = await Geolocator().distanceBetween(
+    final distance = await Geolocator.distanceBetween(
         p.latitude, p.longitude, home.latitude, home.longitude);
     print('Distance to home: $distance');
     if (distance < 100.0) {
@@ -71,8 +71,8 @@ abstract class GeofenceTrigger {
 
   static final homeRegion = GeofenceRegion(
       'home',
-      0.0,
-      0.0,
+      24.591790243367903,
+      73.714686349861,
       1000.0,
       <GeofenceEvent>[
         GeofenceEvent.enter,

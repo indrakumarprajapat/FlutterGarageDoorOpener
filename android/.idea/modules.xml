@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1852567917/android.flutter_local_notifications.iml" filepath="$PROJECT_DIR$/.idea/modules/1852567917/android.flutter_local_notifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1771480225/android.geofencing.iml" filepath="$PROJECT_DIR$/.idea/modules/1771480225/android.geofencing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1801540855/android.geolocator.iml" filepath="$PROJECT_DIR$/.idea/modules/-1801540855/android.geolocator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/984215928/android.path_provider_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/984215928/android.path_provider_linux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1122909852/android.path_provider_windows.iml" filepath="$PROJECT_DIR$/.idea/modules/-1122909852/android.path_provider_windows.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/152608025/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/152608025/android.shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-45068068/android.shared_preferences_linux.iml" filepath="$PROJECT_DIR$/.idea/modules/-45068068/android.shared_preferences_linux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1941459142/android.shared_preferences_macos.iml" filepath="$PROJECT_DIR$/.idea/modules/-1941459142/android.shared_preferences_macos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/872870976/android.shared_preferences_web.iml" filepath="$PROJECT_DIR$/.idea/modules/872870976/android.shared_preferences_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-281018390/android.shared_preferences_windows.iml" filepath="$PROJECT_DIR$/.idea/modules/-281018390/android.shared_preferences_windows.iml" />
+    </modules>
+  </component>
+</project>
