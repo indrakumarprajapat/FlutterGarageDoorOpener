@@ -5,7 +5,6 @@ import 'package:geofencing/geofencing.dart';
 import 'package:geolocator/geolocator.dart';
 
 import 'common.dart';
-import 'garage_door_remote.dart';
 
 abstract class GeofenceTrigger {
   // State needed to post notifications.
@@ -57,16 +56,17 @@ abstract class GeofenceTrigger {
     final distance = await Geolocator.distanceBetween(
         p.latitude, p.longitude, home.latitude, home.longitude);
     print('Distance to home: $distance');
-    if (distance < 100.0) {
-      if (!(await GarageDoorRemote.isOpen)) {
-        await postNotification(0, 'Opening Garage Door',
-            'A geofence event has triggered the garage door!');
-        await GarageDoorRemote.openDoor();
-      } else {
-        await postNotification(0, 'Within 100m of home', 'Door is already open.');
-      }
-      await _stopUpdates();
-    }
+    await postNotification(0, 'Within 100m of home', 'Distance to home: $distance');
+    // if (distance < 100.0) {
+    //   if (!(await GarageDoorRemote.isOpen)) {
+    //     await postNotification(0, 'Opening Garage Door',
+    //         'A geofence event has triggered the garage door!');
+    //     await GarageDoorRemote.openDoor();
+    //   } else {
+    //     await postNotification(0, 'Within 100m of home', 'Door is already open.');
+    //   }
+      // await _stopUpdates();
+    // }
   }
 
   static final homeRegion = GeofenceRegion(

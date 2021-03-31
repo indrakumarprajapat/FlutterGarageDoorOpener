@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:geofencing/geofencing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'src/common.dart';
-import 'src/garage_door_remote.dart';
 import 'src/geofence_trigger.dart';
 
 void main() => runApp(new GarageDoorOpener());
@@ -66,12 +65,12 @@ class _GarageDoorRemoteState extends State<GarageDoorRemotePage> {
       Timer.periodic(Duration(seconds: 5), (Timer t) => _getGarageDoorState());
 
   void _getGarageDoorState() {
-    GarageDoorRemote.isOpen.then((bool isOpen) {
-      setState(() {
-        print('Door state update: $isOpen');
-        state = isOpen ? DoorActivityState.Open : DoorActivityState.Closed;
-      });
-    });
+    // GarageDoorRemote.isOpen.then((bool isOpen) {
+    //   setState(() {
+    //     print('Door state update: $isOpen');
+    //     state = isOpen ? DoorActivityState.Open : DoorActivityState.Closed;
+    //   });
+    // });
   }
 
   String _stateString() {
@@ -87,8 +86,8 @@ class _GarageDoorRemoteState extends State<GarageDoorRemotePage> {
     }
   }
 
-  void _timedClose() => GarageDoorRemote.closeDoorIn(30);
-  void _timedOpenThenClose() => GarageDoorRemote.openDoorFor(60);
+  // void _timedClose() => GarageDoorRemote.closeDoorIn(30);
+  // void _timedOpenThenClose() => GarageDoorRemote.openDoorFor(60);
 
   static const double _outerButtonWidth = 425.0;
   static const double _innerButtonWidth = _outerButtonWidth * (5.0 / 6.0);
@@ -106,7 +105,7 @@ class _GarageDoorRemoteState extends State<GarageDoorRemotePage> {
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           color: Colors.grey[400],
           child: InkWell(
-            onTap: GarageDoorRemote.triggerDoor,
+            // onTap: GarageDoorRemote.triggerDoor,
             child: Container(
               width: _innerButtonWidth,
               height: _innerButtonWidth,
@@ -189,8 +188,8 @@ class _GarageDoorRemoteState extends State<GarageDoorRemotePage> {
             color: Colors.black,
             height: 5.0,
           ),
-          _buildButton('Close in 30 seconds', _timedClose),
-          _buildButton('Open for 60 seconds', _timedOpenThenClose),
+          // _buildButton('Close in 30 seconds', _timedClose),
+          // _buildButton('Open for 60 seconds', _timedOpenThenClose),
           Divider(
             color: Colors.black,
             height: 5.0,
