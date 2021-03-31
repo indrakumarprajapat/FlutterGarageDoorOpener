@@ -1,14 +1,26 @@
 package com.bkonyi.garagedooropener;
-
-import android.os.Bundle;
-
-import io.flutter.app.FlutterActivity;
+import io.flutter.embedding.android.FlutterActivity;
+import androidx.annotation.NonNull;
+import io.flutter.view.FlutterCallbackInformation;
+import io.flutter.view.FlutterMain;
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.plugin.common.MethodChannel;
+import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.app.FlutterApplication;
 import io.flutter.plugins.GeneratedPluginRegistrant;
+import io.flutter.plugins.geofencing.GeofencingService;
 
 public class MainActivity extends FlutterActivity {
+  private static final String CHANNEL = "samples.flutter.dev/battery";
+
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    GeneratedPluginRegistrant.registerWith(this);
+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+    GeneratedPluginRegistrant.registerWith(flutterEngine);
+    new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+            .setMethodCallHandler(
+                    (call, result) -> {
+                      // Your existing code
+                    }
+            );
   }
 }
